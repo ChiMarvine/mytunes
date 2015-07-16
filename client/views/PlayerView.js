@@ -7,6 +7,12 @@ var PlayerView = Backbone.View.extend({
 
   initialize: function() {
   },
+//add event listener that checks if song ends
+  events: {
+    'ended': function(){
+    this.model.trigger('ended', this)
+    }
+  },
 
   setSong: function(song){
     this.model = song;
